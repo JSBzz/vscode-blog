@@ -20,6 +20,7 @@
 .vscode-body {
   position: relative;
   overflow-y: scroll;
+  scrollbar-width: none;
   width: calc(100% - var(--sidenav-width));
   height: calc(100% - var(--header-height) - var(--footer-height));
   color: white;
