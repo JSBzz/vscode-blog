@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
 import "./css/layout.css";
 import { ReactComponent as FilesIcon } from "./icons/files.svg";
 import { ReactComponent as SettingIcon } from "./icons/settings-gear.svg";
@@ -12,8 +10,6 @@ import { ReactComponent as PersonIcon } from "./icons/circle-large.svg";
 import reportWebVitals from "./reportWebVitals";
 import Main from "./Main";
 
-const GlobalStyle = createGlobalStyle`
-  ${reset}`;
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
@@ -43,12 +39,9 @@ root.render(
         </button>
       </div>
     </nav>
-    <React.StrictMode>
-      <GlobalStyle />
       <body className="vscode-body">
         <Main />
       </body>
-    </React.StrictMode>
     <footer className="footer"></footer>
   </div>
 );
