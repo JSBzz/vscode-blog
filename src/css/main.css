@@ -1,3 +1,7 @@
+* {
+  z-index: 10;
+}
+
 .main-body {
   display: flex;
   height: 100%;
@@ -8,11 +12,10 @@
     bottom: 50px;
     right: 10px;
 
-    
-    .alarm-box{
+    .alarm-box {
       position: relative;
-      box-shadow : 0px 0px 5px 3px rgb(24, 24, 24);
-      background-color: #1F1F1F1F;
+      box-shadow: 0px 0px 5px 3px rgb(24, 24, 24);
+      background-color: #1f1f1f1f;
       height: 65px;
       border: #313131 solid 1px;
       width: 300px;
@@ -25,44 +28,41 @@
       padding-left: 10px;
       margin-top: 10px;
 
-      .alarm-box-close-button{
+      .alarm-box-close-button {
         padding: 0px;
         height: 18px;
         width: 18px;
         border-radius: 4px;
-        position: absolute;   
+        position: absolute;
         color: #ccc9bc;
         right: 10px;
       }
 
-      
-      .alarm-box-close-button:hover{
-        position: absolute;   
+      .alarm-box-close-button:hover {
+        position: absolute;
         background: #393c3d;
         right: 10px;
       }
 
-
-      .alarm-message{
+      .alarm-message {
         display: flex;
         align-items: center;
         line-height: 4px;
       }
 
-      .alarm-box-info-icon{
+      .alarm-box-info-icon {
         color: #0078d4;
         width: 18px;
         height: 18px;
         margin-right: 4px;
       }
 
-      .alarm-box-warning-icon{
-        color: #C7A00c;
+      .alarm-box-warning-icon {
+        color: #c7a00c;
         width: 18px;
         height: 18px;
         margin-right: 4px;
       }
-
 
       .alarm-box-ok {
         float: right;
@@ -74,42 +74,42 @@
         font-size: 12px;
         color: aliceblue;
       }
-      .alarm-box-ok:hover{
+      .alarm-box-ok:hover {
         z-index: 20;
         filter: brightness(80%);
       }
 
-      .alarm-box-ok-blue{
+      .alarm-box-ok-blue {
         background-color: #0078d4;
       }
-      .alarm-box-ok-black{
+      .alarm-box-ok-black {
         background-color: #313131;
         border: #404040 solid 1px;
       }
     }
 
-    .alarm-box:hover{
-      background-color: #2A2D2E;
+    .alarm-box:hover {
+      background-color: #2a2d2e;
     }
 
-    .alarm-box-none{
+    .alarm-box-none {
       visibility: hidden;
     }
   }
 
-
   .main-container {
     display: flex;
-    margin:auto;
+    margin: auto;
     flex-direction: column;
-    
+
     .main-vscode-icon {
+      z-index: 0;
       margin: auto;
       color: #141414;
       width: 340px;
       height: 340px;
     }
-    .command{
+    .command {
       text-align: center;
       .command-btn {
         background-color: #2c2c2c;
