@@ -1,20 +1,24 @@
 :root {
-  --header-height: 40px;
+  --header-height: 35px;
   --footer-height: 30px;
-  --sidenav-width: 53px;
+  --sidenav-width: 48px;
   --sidenav-menu-width: 200px;
   --layout-border-thick: 1px;
-  --layout-color: #181818;
-  --layout-border-color: #2b2b2b;
+  --layout-color: rgb(24, 24, 24);
+  --layout-border-color: rgb(43, 43, 43);
   --layout-background-color: #1f1f1f;
+  --header-background-color:rgb(24, 24, 24);
   --header-search-color: #242424;
   --header-search-border-color: #454545;
   --icon-color-active: #d7d7d7;
   --icon-color: #868686;
   --icon-vscode-color: #0098ff;
+  --font-color: rgb(204,204,204);
+  font-family: 'Cascade Mono';
 }
 * {
   z-index: 10;
+  font-family: 'Consolas, 'Courier New', monospace';
 }
 
 .App {
@@ -27,7 +31,7 @@
   scrollbar-width: none;
   width: calc(100% - var(--sidenav-width) - var(--sidenav-menu-width));
   height: calc(100% - var(--header-height) - var(--footer-height));
-  color: white;
+  color: var(--font-color);
   z-index: 20;
   top: var(--header-height);
   left: calc(var(--sidenav-width) + var(--sidenav-menu-width));
@@ -40,17 +44,17 @@
   height: 100vh;
 
   .header {
-    background-color: var(--layout-color);
+    background-color: var(--header-background-color);
     position: fixed;
     height: var(--header-height);
     width: 100%;
     display: flex;
-    z-index: 10;
+    z-index: 20;
     align-items: center;
     flex-direction: row;
     font-size: calc(10px + 2vmin);
     border-bottom: var(--layout-border-thick) solid var(--layout-border-color);
-    color: white;
+    color: var(--font-color);
 
     .vscode-icon {
       color: var(--icon-vscode-color);
@@ -78,7 +82,7 @@
     }
 
     .header-search:hover {
-      filter: brightness(110%);
+      filter: brightness(120%);
     }
 
     .search-icon {
@@ -150,38 +154,75 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      .files-top {
-        height: 300px;
-        overflow-y: scroll;
+      .files-top-container {
+        height: 30px;
+        color: var(--font-color);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
         scrollbar-width: none;
+        margin-left: 20px;
       }
-      .files-bottom {
+      .files-bottom-container {
         height: 100%;
         overflow-y: scroll;
         scrollbar-width: none;
         .files-bottom-title {
-          background-color: #0098ff;
+          /* background-color: #0098ff; */
           display: block;
           width: 100%;
           cursor: pointer;
           transition: all;
-          font-size: 14px;
+          font-size: 11px;
+          height: 20px;
           color: var(--icon-color-active);
           border-top: 1px solid var(--layout-border-color);
         }
-        .files-bottom-files {
-          cursor: pointer;
+        .files-bottom-tree {
           transition: all;
+          transition-duration: 0.2s;
+          overflow: hidden;
           height: 100%;
-          background-color: /*var(--icon-color-active)*/ green;
+          background-color: var(--layout-color);
           border-top: 1px solid var(--layout-border-color);
+
+          .files-bottom{
+            padding: 1px;
+            color:var(--font-color);
+          }
+
+          .files-bottom-folder{
+            color:var(--font-color);
+            cursor: pointer;
+          }
+
+          .files-bottom:hover{
+            cursor: pointer;
+            background-color: var(--layout-border-color);
+          }
+
+          
+
+          
+
+          .files-bottom-folder::before{
+            background:#d7d7d7;
+            margin-right: 3px;
+            content:url('../icons/folder-opened.svg');
+          }
+          
+          .files-bottom-file::before{
+            background:#d7d7d7;
+            margin-right: 3px;
+            content:url('../icons/file-binary.svg');
+          }
         }
 
         #files-fold-trigger {
           display: none;
         }
 
-        #files-fold-trigger:checked + .files-bottom-files {
+        #files-fold-trigger:checked + .files-bottom-tree {
           transition: all;
           transition-duration: 0.2s;
           height: 0%;
