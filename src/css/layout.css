@@ -238,5 +238,7 @@
     background-color: var(--layout-color);
     border-top: var(--layout-border-thick) solid var(--layout-border-color);
     bottom: 0;
+
+    
   }
 }

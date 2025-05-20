@@ -6,6 +6,7 @@ export default function SideNavMenu() {
   const { context, setContext } = useContext(SelectMenuContext);
   return (
     <div className="sidenav-menu">
+      sssssssssssssss
       <SideNavMenuFiles />
     </div>
   );
